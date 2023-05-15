@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+}
+
+.App {
+  background-color: #1b1d21;
+}
+
+.nav {
+  display: flex;
+  background: #121016;
+  box-shadow: 0 1px 0 0 rgba(209, 210, 211, 0.1);
+  height: 40px;
+  align-items: center;
+  .side {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 128px;
+    padding-left: 16px;
+    padding-right: 20px;
+    flex-grow: 0;
+    min-width: 260px;
+  }
+}
+
+.search {
+  display: flex;
+  flex: 2;
+}
+
+.search-button {
+  height: 1.625rem;
+  align-items: center;
+  background: rgba(209, 210, 211, 0.2);
+  border-radius: 6px;
+  color: #d1d2d3;
+  display: flex;
+  flex: 5;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  max-width: 732px;
+  min-width: 0;
+  max-width: none;
+  padding: 0 8px;
+}
+.sidebar {
+  background-color: #19171d;
+  width: 260px;
+  height: 100vh;
+}
+.workSpace {
+  .header {
+    border-color: rgb(43, 42, 47);
+    border-bottom: 1px solid #0000001a;
+    color: #d1d2d3;
+    .teamName {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.33334;
+      min-height: 50px;
+    }
+  }
+}
+
+.header {
+  border-color: rgb(43, 42, 47);
+  border-bottom: 1px solid #0000001a;
+  color: #d1d2d3;
+  font-size: 18px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
