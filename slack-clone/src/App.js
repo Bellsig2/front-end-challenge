@@ -36,12 +36,23 @@ function ChatBox() {
     </div>
   );
 }
-
+function Message() {
+  return (
+    <div className={cn("message")}>
+      <textarea className={cn("messageInput")}></textarea>
+    </div>
+  );
+}
 function View() {
   return (
     <div className={cn("view")}>
       <div className={cn("header")}>#랜덤</div>
-      <ChatBox></ChatBox>
+      <div>
+        <ChatBox></ChatBox>
+      </div>
+      <div className={cn("footer")}>
+        <Message></Message>
+      </div>
     </div>
   );
 }
