@@ -1,0 +1,44 @@
+[
+{
+    "id": "C056JCU51MG",
+    "name": "슬랙-클론코딩",
+    "created": 1683355224,
+    "creator": "U056FE737U5",
+    "is_archived": false,
+    "is_general": false,
+    "members": [
+        "U056FE737U5"
+    ],
+    "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+    },
+    "purpose": {
+        "value": "이 채널은 모두 #슬랙-클론코딩에 관한 것입니다. 미팅, 문서 공유, 의사 결정 모두 팀과 함께 진행하세요.",
+        "creator": "U056FE737U5",
+        "last_set": 1683355224
+    }
+},
+{
+    "id": "C056X1VBHPB",
+    "name": "랜덤",
+    "created": 1683355192,
+    "creator": "U056FE737U5",
+    "is_archived": false,
+    "is_general": false,
+    "members": [
+        "U056FE737U5"
+    ],
+    "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+    },
+    "purpose": {
+        "value": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!",
+        "creator": "U056FE737U5",
+        "last_set": 1683355192
+    }
+}
+]
