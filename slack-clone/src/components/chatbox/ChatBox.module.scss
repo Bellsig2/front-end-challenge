@@ -1,0 +1,37 @@
+.chatboxWrapper {
+  padding: 8px 20px;
+}
+
+.avatar {
+  & img {
+    height: 36px;
+    width: 36px;
+    border-radius: 4px;
+  }
+}
+
+.chatbox {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.userName {
+  font-size: 15px;
+  font-weight: 900;
+  color: #d1d2d3;
+}
+.userWrapper {
+  display: flex;
+  gap: 7px;
+}
+
+.timeStamp {
+  font-size: 12px;
+  color: #ababad;
+}
+
+.contents {
+  font-size: 15px;
+  color: #d1d2d3;
+  font-weight: 400;
+}

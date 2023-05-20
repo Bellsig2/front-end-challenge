@@ -1,4 +1,4 @@
-import style from "./App.module.scss";
+import style from "./ChatBox.module.scss";
 import classnames from "classnames/bind";
 
 const cn = classnames.bind(style);
@@ -16,8 +16,8 @@ export default function ChatBox() {
             <span className={cn("timeStamp")}>오후 3:39</span>
           </div>
           <span className={cn("contents")}>
-            이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는
-            곳이죠! 마음껏 즐기세요!
+            이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나
+            순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!
           </span>
         </div>
       </div>
