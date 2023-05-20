@@ -1,4 +1,4 @@
-import style from "./App.module.scss";
+import style from "./Nav.module.scss";
 import classnames from "classnames/bind";
 
 const cn = classnames.bind(style);
