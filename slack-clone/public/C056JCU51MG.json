@@ -1,0 +1,118 @@
+[
+  {
+    "client_msg_id": "531e3dab-396c-41c3-8336-fc0b7628c19b",
+    "type": "message",
+    "text": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!",
+    "user": "U056FE737U5",
+    "ts": "1683628603.091609",
+    "blocks": [
+      {
+        "type": "rich_text",
+        "block_id": "4/wy",
+        "elements": [
+          {
+            "type": "rich_text_section",
+            "elements": [
+              {
+                "type": "text",
+                "text": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "team": "T05783L0872",
+    "user_team": "T05783L0872",
+    "source_team": "T05783L0872",
+    "user_profile": {
+      "avatar_hash": "2683da3d60f6",
+      "image_72": "https://avatars.slack-edge.com/2023-05-05/5222435575746_2683da3d60f638b43873_72.png",
+      "first_name": "강동자욱자",
+      "real_name": "강동자욱자",
+      "display_name": "",
+      "team": "T05783L0872",
+      "name": "zhzhdkspt",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "chennel_id": "C056JCU51MG",
+    "client_msg_id": "531e3dab-396c-41c3-8336-fc0b7628c19b",
+    "type": "message",
+    "text": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!",
+    "user": "U056FE737U5",
+    "ts": "1683628603.091609",
+    "blocks": [
+      {
+        "type": "rich_text",
+        "block_id": "4/wy",
+        "elements": [
+          {
+            "type": "rich_text_section",
+            "elements": [
+              {
+                "type": "text",
+                "text": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "team": "T05783L0872",
+    "user_team": "T05783L0872",
+    "source_team": "T05783L0872",
+    "user_profile": {
+      "avatar_hash": "2683da3d60f6",
+      "image_72": "https://avatars.slack-edge.com/2023-05-05/5222435575746_2683da3d60f638b43873_72.png",
+      "first_name": "강동자욱자",
+      "real_name": "강동자욱자",
+      "display_name": "",
+      "team": "T05783L0872",
+      "name": "zhzhdkspt",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  },
+  {
+    "chennel_id": "C056JCU51MG",
+    "client_msg_id": "531e3dab-396c-41c3-8336-fc0b7628c19b",
+    "type": "message",
+    "text": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!",
+    "user": "U056FE737U5",
+    "ts": "1683628603.091609",
+    "blocks": [
+      {
+        "type": "rich_text",
+        "block_id": "4/wy",
+        "elements": [
+          {
+            "type": "rich_text_section",
+            "elements": [
+              {
+                "type": "text",
+                "text": "이것은 나머지 모든 것을 위한 채널입니다. 팀원들이 농담하거나 순간적인 아이디어나 재미있는 GIF를 공유하는 곳이죠! 마음껏 즐기세요!"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "team": "T05783L0872",
+    "user_team": "T05783L0872",
+    "source_team": "T05783L0872",
+    "user_profile": {
+      "avatar_hash": "2683da3d60f6",
+      "image_72": "https://avatars.slack-edge.com/2023-05-05/5222435575746_2683da3d60f638b43873_72.png",
+      "first_name": "강동자욱자",
+      "real_name": "강동자욱자",
+      "display_name": "",
+      "team": "T05783L0872",
+      "name": "zhzhdkspt",
+      "is_restricted": false,
+      "is_ultra_restricted": false
+    }
+  }
+]
