@@ -1,10 +1,22 @@
 import { useParams } from "react-router";
 import View from "../view/View";
+import { useEffect, useState } from "react";
 
 export default function ChannelView({ channels }) {
-  const { channelID } = useParams(); // Get the channel ID from the URL
+  const { channelID } = useParams();
+  const [chatLog, setChatLog] = useState([]);
+  const channel = channels.find((channel) => channel.id === channelID);
 
-  const channel = channels.find((channel) => channel.id === channelID); // Find the channel object based on the ID
-
-  <View channel={channel} />;
+  useEffect(() => {
+    fetch(`/${channelID}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        setChatLog(data);
+      });
+  }, [channelID]);
+  return (
+    <>
+      <View channel={channel} chatLog={chatLog} />
+    </>
+  );
 }
