@@ -1,11 +1,22 @@
 import style from "./SideBar.module.scss";
 import classnames from "classnames/bind";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, Routes } from "react-router-dom";
+import Modal from "../modal/Modal";
 
 const cn = classnames.bind(style);
+const onAddChannel = () => {};
+export default function SideBar({ channels, setChannel }) {
+  const location = useLocation();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-export default function SideBar({ channels }) {
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className={cn("sidebar")}>
       <div className={cn("workSpace")}>
@@ -25,6 +36,11 @@ export default function SideBar({ channels }) {
                 <span className={cn("")}>{channel.name}</span>
               </Link>
             ))}
+          </div>
+          <div className={cn("wrapper")}>
+            <div onClick={handleModalOpen} className={cn("addChannel", "item")}>
+              채널 추가하기
+            </div>
           </div>
         </div>
       </div>
