@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import style from "./App.module.scss";
 import classnames from "classnames/bind";
 import SideBar from "./components/sidebar/SideBar";
-import { BrowserRouter as Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import ChannelView from "./components/channelView/ChannelView";
+import Nav from "./components/nav/Nav";
+import View from "./components/view/View";
+import Modal from "./components/modal/Modal";
 
 const cn = classnames.bind(style);
 
 function App() {
   const [channels, setChannels] = useState([]);
+
   useEffect(() => {
     fetch("./channels.json")
       .then((response) => response.json())
@@ -16,11 +20,12 @@ function App() {
         setChannels(data);
       });
   }, []);
+
   return (
     <div className={cn("App")}>
       <div className={cn("workSpaceLayout")}>
         <Nav></Nav>
-        <SideBar channels={channels}></SideBar>
+        <SideBar channels={channels} setChannels={setChannels}></SideBar>
         <Routes>
           <Route
             path="/channels/:channelID"
@@ -28,18 +33,7 @@ function App() {
           />
         </Routes>
       </div>
-    </div>
-  );
-}
-
-function Nav() {
-  return (
-    <div className={cn("nav")}>
-      <div className={cn("side", "left")}>왼쪽</div>
-      <div className={cn("search")}>
-        <button className={cn("search-button")}>검색</button>
-      </div>
-      <div className={cn("side", "right")}>오른쪽</div>
+      <Modal></Modal>
     </div>
   );
 }
