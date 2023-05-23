@@ -19,6 +19,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+a {
+  text-decoration: none;
+}
 .App {
   background-color: #1b1d21;
 }
@@ -30,6 +34,8 @@ ul {
   grid-template-areas:
     "nav nav"
     "sidebar view";
+  max-height: calc(100vh - 44px);
+  height: 100vh;
 }
 
 .sidebar {
