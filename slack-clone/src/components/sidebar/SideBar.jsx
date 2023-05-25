@@ -3,11 +3,9 @@ import classnames from "classnames/bind";
 import { useState } from "react";
 import { Link, useLocation, Routes } from "react-router-dom";
 import Modal from "../modal/Modal";
-
 const cn = classnames.bind(style);
-const onAddChannel = () => {};
-export default function SideBar({ channels, setChannel }) {
-  const location = useLocation();
+
+export default function SideBar({ channels, setChannels, chatLog, setChatLog }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = () => {
@@ -17,6 +15,7 @@ export default function SideBar({ channels, setChannel }) {
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
+
   return (
     <div className={cn("sidebar")}>
       <div className={cn("workSpace")}>
@@ -44,6 +43,17 @@ export default function SideBar({ channels, setChannel }) {
           </div>
         </div>
       </div>
+      {isModalOpen === true ? (
+        <Modal
+          handleModalClose={handleModalClose}
+          setChannels={setChannels}
+          channels={channels}
+          chatLog={chatLog}
+          setChatLog={setChatLog}
+        ></Modal>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

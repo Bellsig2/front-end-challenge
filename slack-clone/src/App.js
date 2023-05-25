@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import style from "./App.module.scss";
 import classnames from "classnames/bind";
 import SideBar from "./components/sidebar/SideBar";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import ChannelView from "./components/channelView/ChannelView";
 import Nav from "./components/nav/Nav";
-import View from "./components/view/View";
-import Modal from "./components/modal/Modal";
 
 const cn = classnames.bind(style);
 
 function App() {
   const [channels, setChannels] = useState([]);
+  const [chatLog, setChatLog] = useState([]);
 
   useEffect(() => {
     fetch("./channels.json")
@@ -25,15 +24,25 @@ function App() {
     <div className={cn("App")}>
       <div className={cn("workSpaceLayout")}>
         <Nav></Nav>
-        <SideBar channels={channels} setChannels={setChannels}></SideBar>
+        <SideBar
+          channels={channels}
+          setChannels={setChannels}
+          chatLog={chatLog}
+          setChatLog={setChatLog}
+        ></SideBar>
         <Routes>
           <Route
             path="/channels/:channelID"
-            element={<ChannelView channels={channels} />}
+            element={
+              <ChannelView
+                channels={channels}
+                chatLog={chatLog}
+                setChatLog={setChatLog}
+              />
+            }
           />
         </Routes>
       </div>
-      <Modal></Modal>
     </div>
   );
 }

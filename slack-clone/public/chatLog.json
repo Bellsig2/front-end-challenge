@@ -1,5 +1,6 @@
 [
   {
+    "channel_id": "C056X1VBHPB",
     "client_msg_id": "8c7946be-3c3e-42db-82a8-53f3c72e76a0",
     "type": "message",
     "text": "asdasd",
@@ -38,6 +39,7 @@
     }
   },
   {
+    "channel_id": "C056X1VBHPB",
     "client_msg_id": "adf2b75d-7c09-42a0-98d3-6540f94d63e0",
     "type": "message",
     "text": "asdad",
@@ -76,6 +78,7 @@
     }
   },
   {
+    "channel_id": "C056X1VBHPB",
     "client_msg_id": "cd2bca42-6d14-4b11-9851-f15133b30e86",
     "type": "message",
     "text": "asdasd",
@@ -114,6 +117,7 @@
     }
   },
   {
+    "channel_id": "C056X1VBHPB",
     "client_msg_id": "e4f1b290-4be0-4f28-b22f-24e331b96592",
     "type": "message",
     "text": "asdasdad",
@@ -152,6 +156,7 @@
     }
   },
   {
+    "channel_id": "C056X1VBHPB",
     "client_msg_id": "02df49ce-a887-4eab-b33e-7036beac706d",
     "type": "message",
     "text": "asdasdawdawd",

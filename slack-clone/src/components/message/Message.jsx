@@ -5,7 +5,10 @@ const cn = classnames.bind(style);
 export default function Message() {
   return (
     <div className={cn("message")}>
-      <textarea className={cn("messageInput")}></textarea>
+      <div>
+        <textarea className={cn("messageInput")}></textarea>
+        <button className={cn("submit")}>전송</button>
+      </div>
     </div>
   );
 }
