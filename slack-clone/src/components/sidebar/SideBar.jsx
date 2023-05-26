@@ -26,11 +26,7 @@ export default function SideBar({ channels, setChannels, chatLog, setChatLog }) 
         <div className={cn("list")}>
           <div className={cn("wrapper")}>
             {channels.map((channel) => (
-              <Link
-                to={`/channels/${channel.id}`}
-                key={channel.id}
-                className={cn("channelName", "item")}
-              >
+              <Link to={`/channels/${channel.id}`} key={channel.id} className={cn("channelName", "item")}>
                 <span className={cn("icon")}>#</span>
                 <span className={cn("")}>{channel.name}</span>
               </Link>
@@ -49,8 +45,7 @@ export default function SideBar({ channels, setChannels, chatLog, setChatLog }) 
           setChannels={setChannels}
           channels={channels}
           chatLog={chatLog}
-          setChatLog={setChatLog}
-        ></Modal>
+          setChatLog={setChatLog}></Modal>
       ) : (
         ""
       )}

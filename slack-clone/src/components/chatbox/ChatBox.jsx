@@ -14,9 +14,7 @@ export default function ChatBox({ chatLog }) {
           {chatLog.text !== undefined ? (
             <div className={cn("")}>
               <div className={cn("userWrapper")}>
-                <div className={cn("userName")}>
-                  {chatLog.user_profile.real_name}
-                </div>
+                <div className={cn("userName")}>{chatLog.user_profile.real_name}</div>
                 <span className={cn("timeStamp")}>오후 3:39</span>
               </div>
               <span className={cn("contents")}>{chatLog.text}</span>

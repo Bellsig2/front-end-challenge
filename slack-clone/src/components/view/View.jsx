@@ -5,17 +5,19 @@ import Message from "../message/Message";
 
 const cn = classnames.bind(style);
 
-export default function View({ channel, chatLog }) {
+export default function View({ channel, chatLog, setChatLog }) {
+  const ChatList = chatLog
+    .filter((chatLog) => channel.id === chatLog.channel_id)
+    .map((chatLog) => {
+      return <ChatBox key={chatLog.client_msg_id} chatLog={chatLog} />;
+    });
+
   return (
     <div className={cn("view")}>
       <div className={cn("header")}>{channel.name}</div>
-      <div className={cn("body")}>
-        {chatLog.map((chatLog) => (
-          <ChatBox chatLog={chatLog} />
-        ))}
-      </div>
+      <div className={cn("body")}>{ChatList}</div>
       <div className={cn("footer")}>
-        <Message />
+        <Message setChatLog={setChatLog} chatLog={chatLog} channel={channel} />
       </div>
     </div>
   );

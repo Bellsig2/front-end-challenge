@@ -1,18 +1,13 @@
 import classNames from "classnames/bind";
 import style from "./Modal.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Channel from "../../utils/Channels";
-import { ChatLog } from "../../utils/ChatLog";
+import ChatLog from "../../utils/ChatLog";
+import UseInput from "../hook/UseInput";
 
 const cn = classNames.bind(style);
 
-export default function Modal({
-  handleModalClose,
-  setChannels,
-  channels,
-  chatLog,
-  setChatLog,
-}) {
+export default function Modal({ handleModalClose, setChannels, channels, chatLog, setChatLog }) {
   const [channelName, setChannelName] = useState();
   const onKey = (e) => {
     let value = e.target.value;
@@ -35,6 +30,7 @@ export default function Modal({
       creator: "강동욱동강",
     };
     // 채팅 로그 생성
+
     newChatLog._channelId = newChannel._id;
     setChannels([...channels, newChannel]);
     setChatLog([...chatLog, newChatLog]);
@@ -54,8 +50,7 @@ export default function Modal({
                   placeholder="플랜 예산"
                   onKeyUp={(e) => {
                     onKey(e);
-                  }}
-                ></input>
+                  }}></input>
               </div>
             </div>
           </div>
@@ -63,8 +58,7 @@ export default function Modal({
             <button
               onClick={() => {
                 addChannel(channelName);
-              }}
-            >
+              }}>
               다음
             </button>
           </div>

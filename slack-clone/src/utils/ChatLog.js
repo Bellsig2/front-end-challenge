@@ -1,12 +1,13 @@
-export class ChatLog {
+import { randomString } from "./randomString";
+export default class ChatLog {
   constructor(channelId, clientMsgId, type, text, user, ts, userProfile) {
-    this._channelId = channelId;
-    this._clientMsgId = clientMsgId;
-    this._type = type;
-    this._text = text;
-    this._user = user;
-    this._ts = ts;
-    this._userProfile = userProfile;
+    this.channelId = channelId;
+    this.clientMsgId = clientMsgId;
+    this.type = type;
+    this.text = text;
+    this.user = user;
+    this.ts = ts;
+    this.user_profile = userProfile;
   }
 
   get channelId() {
@@ -22,7 +23,7 @@ export class ChatLog {
   }
 
   set clientMsgId(clientMsgId) {
-    this._clientMsgId = clientMsgId;
+    this._clientMsgId = randomString(1, 11);
   }
 
   get type() {
@@ -57,11 +58,11 @@ export class ChatLog {
     this._ts = new Date().getTime();
   }
 
-  get userProfile() {
-    return this._userProfile;
+  get user_profile() {
+    return this._user_profile;
   }
 
-  set userProfile(userProfile) {
-    this._userProfile = userProfile;
+  set user_profile(userProfile) {
+    this._user_profile = userProfile;
   }
 }
