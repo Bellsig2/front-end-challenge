@@ -5,7 +5,12 @@ import { Link, useLocation, Routes } from "react-router-dom";
 import Modal from "../modal/Modal";
 const cn = classnames.bind(style);
 
-export default function SideBar({ channels, setChannels, chatLog, setChatLog }) {
+export default function SideBar({
+  channels,
+  setChannels,
+  chatLog,
+  setChatLog,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = () => {
@@ -14,6 +19,16 @@ export default function SideBar({ channels, setChannels, chatLog, setChatLog }) 
 
   const handleModalClose = () => {
     setIsModalOpen(false);
+  };
+
+  const deleteChannel = (channelId) => {
+    let channelsTmp = [...channels];
+    for (let i = 0; i < channels.length; i++) {
+      if (channels[i].id === channelId) {
+        channelsTmp.splice(i, 1);
+      }
+    }
+    setChannels(channelsTmp);
   };
 
   return (
@@ -26,9 +41,28 @@ export default function SideBar({ channels, setChannels, chatLog, setChatLog }) 
         <div className={cn("list")}>
           <div className={cn("wrapper")}>
             {channels.map((channel) => (
-              <Link to={`/channels/${channel.id}`} key={channel.id} className={cn("channelName", "item")}>
-                <span className={cn("icon")}>#</span>
-                <span className={cn("")}>{channel.name}</span>
+              <Link
+                to={`/channels/${channel.id}`}
+                key={channel.id}
+                className={cn("channelName", "item")}
+              >
+                <div className={cn("channelNameInner")}>
+                  <div>
+                    <span className={cn("icon")}>#</span>
+                    <span className={cn("name")}>{channel.name}</span>
+                  </div>
+                  <div>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        deleteChannel(channel.id);
+                      }}
+                      className={cn("button")}
+                    >
+                      삭제
+                    </button>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
@@ -45,7 +79,8 @@ export default function SideBar({ channels, setChannels, chatLog, setChatLog }) 
           setChannels={setChannels}
           channels={channels}
           chatLog={chatLog}
-          setChatLog={setChatLog}></Modal>
+          setChatLog={setChatLog}
+        ></Modal>
       ) : (
         ""
       )}

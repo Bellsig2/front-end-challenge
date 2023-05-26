@@ -61,3 +61,20 @@
 .addChannel {
   color: #d1d2d3;
 }
+
+.button {
+  margin-left: 40px;
+  color: #d1d2d3;
+  background-color: transparent;
+  border: none;
+}
+
+.name {
+  margin-left: 5px;
+}
+
+.channelNameInner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

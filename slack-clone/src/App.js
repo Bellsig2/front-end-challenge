@@ -5,21 +5,33 @@ import SideBar from "./components/sidebar/SideBar";
 import { Route, Routes } from "react-router-dom";
 import ChannelView from "./components/channelView/ChannelView";
 import Nav from "./components/nav/Nav";
-
 const cn = classnames.bind(style);
+
+const fetchChannels = async () => {
+  const response = await fetch("/channels.json");
+  const data = await response.json();
+  return data;
+};
+
+const fetchChatLog = async () => {
+  const response = await fetch("/chatLog2.json");
+  const data = await response.json();
+  return data;
+};
 
 function App() {
   const [channels, setChannels] = useState([]);
   const [chatLog, setChatLog] = useState([]);
 
   useEffect(() => {
-    fetch("./channels.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setChannels(data);
-      });
+    const fetchData = async () => {
+      const channelsData = await fetchChannels();
+      const chatLogData = await fetchChatLog();
+      setChannels(channelsData);
+      setChatLog(chatLogData);
+    };
+    fetchData();
   }, []);
-
   return (
     <div className={cn("App")}>
       <div className={cn("workSpaceLayout")}>
@@ -31,6 +43,7 @@ function App() {
           setChatLog={setChatLog}
         ></SideBar>
         <Routes>
+          <Route path="/" element="" />
           <Route
             path="/channels/:channelID"
             element={

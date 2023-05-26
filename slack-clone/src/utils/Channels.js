@@ -10,42 +10,42 @@ export default class Channel {
     this.purpose = purpose;
   }
 
-  get id() {
-    return this._id;
+  get _id() {
+    return this.id;
   }
 
-  set id(id) {
-    this._id = randomString(1, 11);
+  set _id({ min, max }) {
+    this.id = randomString(min, max);
   }
 
-  get name() {
-    return this._name;
+  get _name() {
+    return this.name;
   }
 
-  set name(name) {
-    this._name = name;
+  set _name(name) {
+    this.name = name;
   }
 
-  get created() {
-    return this._created;
+  get _created() {
+    return this.created;
   }
-  set created(created) {
-    this._created = new Date().getTime();
-  }
-
-  get members() {
-    return this._members;
+  set _created(created) {
+    this.created = new Date().getTime();
   }
 
-  set members(members) {
-    this._members = members;
+  get _members() {
+    return this.members;
   }
 
-  get purpose() {
-    return this._purpose;
+  set _members(members) {
+    this.members = members;
   }
 
-  set purpose(purpose) {
-    this._purpose = purpose;
+  get _purpose() {
+    return this.purpose;
+  }
+
+  set _purpose(purpose) {
+    this.purpose = purpose;
   }
 }

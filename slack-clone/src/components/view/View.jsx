@@ -9,7 +9,14 @@ export default function View({ channel, chatLog, setChatLog }) {
   const ChatList = chatLog
     .filter((chatLog) => channel.id === chatLog.channel_id)
     .map((chatLog) => {
-      return <ChatBox key={chatLog.client_msg_id} chatLog={chatLog} />;
+      return (
+        <ChatBox
+          key={chatLog.client_msg_id}
+          chatLog={chatLog}
+          setChatLog={setChatLog}
+          channel={channel}
+        />
+      );
     });
 
   return (

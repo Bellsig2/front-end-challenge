@@ -1,68 +1,69 @@
 import { randomString } from "./randomString";
+
 export default class ChatLog {
-  constructor(channelId, clientMsgId, type, text, user, ts, userProfile) {
-    this.channelId = channelId;
-    this.clientMsgId = clientMsgId;
+  constructor() {
+    this.channel_id = null;
+    this.client_msg_id = null;
+    this.type = null;
+    this.text = null;
+    this.user = null;
+    this.ts = null;
+    this.user_profile = null;
+  }
+
+  get _channel_id() {
+    return this.channel_id; // 수정: 올바른 속성으로 접근
+  }
+
+  set _channel_id(value) {
+    this.channel_id = value; // 수정: 올바른 속성에 값을 할당
+  }
+
+  get _client_msg_id() {
+    return this.client_msg_id; // 수정: 올바른 속성으로 접근
+  }
+
+  set _client_msg_id({ min, max }) {
+    this.client_msg_id = randomString(min, max); // 수정: 올바른 속성에 값을 할당
+  }
+
+  get _type() {
+    return this.type;
+  }
+
+  set _type(type) {
     this.type = type;
-    this.text = text;
-    this.user = user;
-    this.ts = ts;
-    this.user_profile = userProfile;
   }
 
-  get channelId() {
-    return this._channelId;
-  }
-
-  set channelId(channelId) {
-    this._channelId = channelId;
-  }
-
-  get clientMsgId() {
-    return this._clientMsgId;
-  }
-
-  set clientMsgId(clientMsgId) {
-    this._clientMsgId = randomString(1, 11);
-  }
-
-  get type() {
-    return this._type;
-  }
-
-  set type(type) {
-    this._type = type;
-  }
-
-  get text() {
+  get _text() {
     return this._text;
   }
 
-  set text(text) {
-    this._text = text;
+  set _text(text) {
+    this.text = text;
   }
 
-  get user() {
-    return this._user;
+  get _user() {
+    return this.user;
   }
 
-  set user(user) {
-    this._user = user;
+  set _user(user) {
+    this.user = user;
   }
 
-  get ts() {
-    return this._ts;
+  get _ts() {
+    return this.ts;
   }
 
-  set ts(ts) {
-    this._ts = new Date().getTime();
+  set _ts(ts) {
+    this.ts = new Date().getTime();
   }
 
-  get user_profile() {
-    return this._user_profile;
+  get _user_profile() {
+    return this.user_profile;
   }
 
-  set user_profile(userProfile) {
-    this._user_profile = userProfile;
+  set _user_profile(userProfile) {
+    this.user_profile = userProfile;
   }
 }

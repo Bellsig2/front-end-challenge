@@ -6,8 +6,24 @@ import ChatLog from "../../utils/ChatLog";
 import UseInput from "../hook/UseInput";
 
 const cn = classNames.bind(style);
+function extractProperties(instance) {
+  const properties = {};
+  for (let key in instance) {
+    if (instance.hasOwnProperty(key)) {
+      properties[key] = instance[key];
+    }
+  }
 
-export default function Modal({ handleModalClose, setChannels, channels, chatLog, setChatLog }) {
+  return properties;
+}
+
+export default function Modal({
+  handleModalClose,
+  setChannels,
+  channels,
+  chatLog,
+  setChatLog,
+}) {
   const [channelName, setChannelName] = useState();
   const onKey = (e) => {
     let value = e.target.value;
@@ -21,7 +37,7 @@ export default function Modal({ handleModalClose, setChannels, channels, chatLog
     // 채팅 로그 클래스 생성
     let newChatLog = new ChatLog();
     // 채널 데이터 세팅
-    newChannel.id = "";
+    newChannel._id = { min: 1, max: 11 };
     newChannel.name = channelName;
     newChannel.created = "";
     newChannel.member = ["강동욱동강"];
@@ -29,11 +45,8 @@ export default function Modal({ handleModalClose, setChannels, channels, chatLog
       value: "이것은 나머지 모든 것을 위한 채널입니다.",
       creator: "강동욱동강",
     };
-    // 채팅 로그 생성
-
-    newChatLog._channelId = newChannel._id;
-    setChannels([...channels, newChannel]);
-    setChatLog([...chatLog, newChatLog]);
+    const extractedProperties = extractProperties(newChannel);
+    setChannels([...channels, extractedProperties]);
     handleModalClose();
   };
 
@@ -50,7 +63,8 @@ export default function Modal({ handleModalClose, setChannels, channels, chatLog
                   placeholder="플랜 예산"
                   onKeyUp={(e) => {
                     onKey(e);
-                  }}></input>
+                  }}
+                ></input>
               </div>
             </div>
           </div>
@@ -58,7 +72,8 @@ export default function Modal({ handleModalClose, setChannels, channels, chatLog
             <button
               onClick={() => {
                 addChannel(channelName);
-              }}>
+              }}
+            >
               다음
             </button>
           </div>
