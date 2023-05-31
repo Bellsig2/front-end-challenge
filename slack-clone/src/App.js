@@ -24,13 +24,15 @@ function App() {
   const [chatLog, setChatLog] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const channelsData = await fetchChannels();
-      const chatLogData = await fetchChatLog();
-      setChannels(channelsData);
-      setChatLog(chatLogData);
-    };
-    fetchData();
+    if (channels.length === 0 && chatLog.length === 0) {
+      const fetchData = async () => {
+        const channelsData = await fetchChannels();
+        const chatLogData = await fetchChatLog();
+        setChannels(channelsData);
+        setChatLog(chatLogData);
+      };
+      fetchData();
+    }
   }, []);
   return (
     <div className={cn("App")}>
