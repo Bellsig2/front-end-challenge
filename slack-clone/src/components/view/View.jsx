@@ -2,17 +2,19 @@ import style from "./View.module.scss";
 import classnames from "classnames/bind";
 import ChatBox from "../chatbox/ChatBox";
 import Message from "../message/Message";
+import { Router, useNavigate } from "react-router";
 
 const cn = classnames.bind(style);
 
 export default function View({ channel, chatLog, setChatLog }) {
   const ChatList = chatLog
-    .filter((chatLog) => channel.id === chatLog.channel_id)
-    .map((chatLog) => {
+    .filter((log) => channel.id === log.channel_id)
+    .map((log) => {
       return (
         <ChatBox
           key={chatLog.client_msg_id}
           chatLog={chatLog}
+          log={log}
           setChatLog={setChatLog}
           channel={channel}
         />

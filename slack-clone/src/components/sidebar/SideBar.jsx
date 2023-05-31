@@ -1,7 +1,7 @@
 import style from "./SideBar.module.scss";
 import classnames from "classnames/bind";
 import { useState } from "react";
-import { Link, useLocation, Routes } from "react-router-dom";
+import { Link, useNavigate, Routes } from "react-router-dom";
 import Modal from "../modal/Modal";
 const cn = classnames.bind(style);
 
@@ -12,7 +12,7 @@ export default function SideBar({
   setChatLog,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleModalOpen = () => {
     setIsModalOpen(true);
   };
@@ -28,6 +28,7 @@ export default function SideBar({
         channelsTmp.splice(i, 1);
       }
     }
+    navigate("/");
     setChannels(channelsTmp);
   };
 

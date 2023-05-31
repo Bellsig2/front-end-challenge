@@ -31,6 +31,7 @@ export default function Message({ setChatLog, chatLog, channel }) {
     const extractedProperties = extractProperties(newMessage);
     setChatLog([...chatLog, extractedProperties]);
   };
+
   return (
     <div className={cn("message")}>
       <div>
