@@ -3,7 +3,7 @@ import style from "./Modal.module.scss";
 import { useEffect, useState } from "react";
 import Channel from "../../utils/Channels";
 import ChatLog from "../../utils/ChatLog";
-import UseInput from "../hook/UseInput";
+import UseInput from "../../hook/UseInput";
 
 const cn = classNames.bind(style);
 function extractProperties(instance) {
