@@ -5,14 +5,14 @@
   display: grid;
   grid-template-rows: 49px auto 100px;
   max-height: calc(100vh - 44px);
-  .body {
-    display: flex;
-
-    align-items: flex-start;
+  .wrapper {
     overflow-y: scroll;
-    scroll-behavior: smooth;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+    .body {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 .header {
