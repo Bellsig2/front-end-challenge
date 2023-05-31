@@ -56,7 +56,7 @@ export default class ChatLog {
   }
 
   set _ts(ts) {
-    this.ts = new Date().getTime();
+    this.ts = Math.floor(+new Date() / 1000);
   }
 
   get _user_profile() {
